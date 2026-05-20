@@ -1,0 +1,63 @@
+*.rbc
+capybara-*.html
+.rspec
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/db/*.sqlite3-[0-9]*
+/public/system
+/coverage/
+/spec/tmp
+*.orig
+rerun.txt
+pickle-email-*.html
+
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/.keep
+
+/public/assets
+.byebug_history
+
+/config/master.key
+/config/credentials/*.key
+
+.env
+.env.*
+!.env.example
+
+node_modules/
+yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+*.gem
+*.rbo
+mkmf.log
+
+# Ignore package-lock.json if using yarn
+package-lock.json
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Kamal secrets
+.kamal/secrets
+
+# Ignore SolidQ/Cache/Cable DB schemas in dev
+db/cache_schema.rb
+db/queue_schema.rb
+db/cable_schema.rb

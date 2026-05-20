@@ -1,0 +1,47 @@
+<div class="container" style="padding-top: 32px; max-width: 800px;">
+  <h1>New Blueprint</h1>
+
+  <%= form_with(model: @blueprint, local: true) do |f| %>
+    <% if @blueprint.errors.any? %>
+      <div class="alert">
+        <ul style="padding-left: 20px;">
+          <% @blueprint.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "My Dev Environment", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 3, placeholder: "A brief description of this blueprint..." %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :slug %>
+      <%= f.text_field :slug, placeholder: "my-dev-env (auto-generated from name)" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :yaml_content, "YAML Manifest" %>
+      <%= f.text_area :yaml_content, rows: 20, placeholder: "Paste your blueprint YAML here..." %>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <%= f.check_box :public %>
+        Make this blueprint public
+      </label>
+    </div>
+
+    <div style="display: flex; gap: 12px;">
+      <%= f.submit "Create Blueprint", class: "btn btn-primary" %>
+      <a href="<%= blueprints_path %>" class="btn btn-outline">Cancel</a>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+<div class="container" style="padding-top: 32px;">
+  <div class="header-actions">
+    <h1>Blueprints</h1>
+    <% if user_signed_in? %>
+      <a href="<%= new_blueprint_path %>" class="btn btn-primary">New Blueprint</a>
+    <% end %>
+  </div>
+
+  <form action="<%= blueprints_path %>" method="get" style="margin-bottom: 24px;">
+    <div style="display: flex; gap: 8px;">
+      <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search blueprints..." style="flex:1; padding:10px 12px; background:var(--color-bg); border:1px solid var(--color-border); border-radius:var(--radius); color:var(--color-text);">
+      <button type="submit" class="btn btn-outline">Search</button>
+    </div>
+  </form>
+
+  <% if @blueprints.any? %>
+    <div class="grid">
+      <% @blueprints.each do |bp| %>
+        <a href="<%= blueprint_path(bp) %>" style="text-decoration:none;color:inherit;">
+          <div class="card">
+            <h3><%= bp.name %></h3>
+            <p><%= truncate(bp.description, length: 120) || "No description" %></p>
+            <div class="meta">
+              <span>by <%= bp.user.name %></span>
+              <span class="badge <%= bp.public? ? 'badge-public' : 'badge-private' %>">
+                <%= bp.public? ? "Public" : "Private" %>
+              </span>
+              <span><%= time_ago_in_words(bp.created_at) %> ago</span>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+    <%= paginate @blueprints if @blueprints.respond_to?(:total_pages) %>
+  <% else %>
+    <p style="color: var(--color-text-muted); text-align: center; padding: 48px 0;">
+      No blueprints yet. <%= link_to "Create one", new_blueprint_path %> to get started.
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,99 @@
+<div class="container" style="padding-top: 48px; padding-bottom: 48px;">
+  <h1>About Blueprint</h1>
+
+  <section style="padding-top: 24px;">
+    <h2>What is Blueprint?</h2>
+    <p style="color: var(--color-text-muted); max-width: 700px; margin-bottom: 16px;">
+      Blueprint is an open-source web application for defining, sharing, and reproducing
+      development environments as code. Think of it as "dotfiles as a service" with a
+      web interface and a CLI for bootstrapping new machines.
+    </p>
+    <p style="color: var(--color-text-muted); max-width: 700px; margin-bottom: 16px;">
+      Every time you set up a new machine, you rebuild from scratch. You install packages,
+      configure dotfiles, set environment variables, enable services. Blueprint makes this
+      process declarative: define it once, share it via URL, reproduce it anywhere.
+    </p>
+  </section>
+
+  <section>
+    <h2>Sample Blueprint YAML</h2>
+    <pre><code>name: "Arch Linux Hyprland Desktop"
+description: "Full Arch Linux setup with Hyprland, Waybar, and dev tools"
+
+packages:
+  - name: hyprland
+    category: pacman
+  - name: waybar
+    category: pacman
+  - name: kitty
+    category: pacman
+  - name: neovim
+    category: pacman
+  - name: fuzzel
+    category: pacman
+  - name: mise
+    category: aur
+
+dotfiles:
+  - name: Hyprland Config
+    target_path: ~/.config/hypr/hyprland.conf
+    content: |
+      # Hyprland configuration
+      monitor=,preferred,auto,1
+      $terminal = kitty
+      $menu = fuzzel
+
+environment:
+  EDITOR: nvim
+  BROWSER: firefox
+  TERMINAL: kitty
+
+services:
+  - name: docker
+    enabled: true
+  - name: bluetooth
+    enabled: true</code></pre>
+  </section>
+
+  <section>
+    <h2>CLI Usage</h2>
+    <pre><code># Install the CLI
+gem install blueprint-cli
+
+# Pull a blueprint and apply it
+blueprint apply @synth/arch-hyprland
+
+# Export as a shell script
+blueprint export @synth/arch-hyprland --format shell > setup.sh
+
+# Download the raw YAML
+blueprint download @synth/arch-hyprland > my-blueprint.yml</code></pre>
+  </section>
+
+  <section>
+    <h2>API</h2>
+    <pre><code># List public blueprints
+curl https://blueprint.dev/api/v1/blueprints
+
+# Get a specific blueprint
+curl https://blueprint.dev/api/v1/blueprints/arch-hyprland
+
+# Download as shell script
+curl https://blueprint.dev/api/v1/blueprints/arch-hyprland/download_script
+
+# Download as YAML
+curl https://blueprint.dev/api/v1/blueprints/arch-hyprland/download_yaml</code></pre>
+  </section>
+
+  <section>
+    <h2>Built With</h2>
+    <ul style="color: var(--color-text-muted); padding-left: 24px;">
+      <li>Ruby on Rails 8.1</li>
+      <li>PostgreSQL</li>
+      <li>Devise (authentication)</li>
+      <li>FriendlyId (slugs)</li>
+      <li>Kaminari (pagination)</li>
+      <li>Hotwire (Turbo + Stimulus)</li>
+    </ul>
+  </section>
+</div>
