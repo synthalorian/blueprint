@@ -1,0 +1,55 @@
+<div class="hero">
+  <h1>Blueprint</h1>
+  <p>Define your development environment as code. Packages, dotfiles, services, env vars — all in one YAML manifest. Share it. Reproduce it.</p>
+  <div class="actions">
+    <a href="/blueprints" class="btn btn-primary">Browse Blueprints</a>
+    <a href="/about" class="btn btn-outline">Learn More</a>
+  </div>
+</div>
+
+<% if @featured.any? %>
+<section>
+  <div class="container">
+    <h2>Recent Blueprints</h2>
+    <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+      <%= @count %> blueprint<%= "s" if @count != 1 %> and counting.
+    </p>
+    <div class="grid">
+      <% @featured.each do |bp| %>
+        <a href="<%= blueprint_path(bp) %>" style="text-decoration:none;color:inherit;">
+          <div class="card">
+            <h3><%= bp.name %></h3>
+            <p><%= truncate(bp.description, length: 120) %></p>
+            <div class="meta">
+              <span>by <%= bp.user.name %></span>
+              <span class="badge <%= bp.public? ? 'badge-public' : 'badge-private' %>">
+                <%= bp.public? ? "Public" : "Private" %>
+              </span>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<section>
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Define</h3>
+        <p>Write a YAML manifest declaring your packages, dotfiles, environment variables, and services.</p>
+      </div>
+      <div class="card">
+        <h3>2. Share</h3>
+        <p>Every blueprint gets a unique URL. Share it with your team or the world.</p>
+      </div>
+      <div class="card">
+        <h3>3. Bootstrap</h3>
+        <p>Use the CLI to pull down a blueprint and set up a new machine in minutes, not hours.</p>
+      </div>
+    </div>
+  </div>
+</section>

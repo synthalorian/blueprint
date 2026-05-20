@@ -1,0 +1,90 @@
+<div class="container" style="padding-top: 32px; max-width: 800px;">
+  <div class="header-actions">
+    <div>
+      <h1><%= @blueprint.name %></h1>
+      <p style="color: var(--color-text-muted);">
+        by <%= @blueprint.user.name %> &middot;
+        <span class="badge <%= @blueprint.public? ? 'badge-public' : 'badge-private' %>">
+          <%= @blueprint.public? ? "Public" : "Private" %>
+        </span>
+      </p>
+    </div>
+    <% if user_signed_in? && @blueprint.user == current_user %>
+      <div style="display: flex; gap: 8px;">
+        <%= button_to "Duplicate", duplicate_blueprint_path(@blueprint), method: :post, class: "btn btn-outline" %>
+        <%= link_to "Edit", edit_blueprint_path(@blueprint), class: "btn btn-outline" %>
+        <%= button_to "Delete", blueprint_path(@blueprint), method: :delete, class: "btn btn-danger",
+              form: { data: { turbo_confirm: "Are you sure?" } } %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @blueprint.description.present? %>
+    <p style="color: var(--color-text-muted); margin-bottom: 24px;"><%= @blueprint.description %></p>
+  <% end %>
+
+  <section>
+    <h3 style="margin-bottom: 12px;">YAML Manifest</h3>
+    <pre><code><%= @blueprint.yaml_content %></code></pre>
+  </section>
+
+  <% if @blueprint.packages.any? %>
+  <section>
+    <h3>Packages (<%= @blueprint.packages.count %>)</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
+      <% @blueprint.packages.each do |pkg| %>
+        <span class="badge" style="background: var(--color-bg); border: 1px solid var(--color-border);">
+          <%= pkg.name %> <small style="color: var(--color-text-muted);">(<%= pkg.category %>)</small>
+        </span>
+      <% end %>
+    </div>
+  </section>
+  <% end %>
+
+  <% if @blueprint.dotfiles.any? %>
+  <section>
+    <h3>Dotfiles (<%= @blueprint.dotfiles.count %>)</h3>
+    <% @blueprint.dotfiles.each do |df| %>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4><%= df.name %></h4>
+        <code style="font-size: 0.85em; color: var(--color-text-muted);"><%= df.target_path %></code>
+      </div>
+    <% end %>
+  </section>
+  <% end %>
+
+  <% if @blueprint.environment_variables.any? %>
+  <section>
+    <h3>Environment Variables</h3>
+    <div class="card" style="margin-top: 12px;">
+      <% @blueprint.environment_variables.each do |ev| %>
+        <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--color-border);">
+          <code><%= ev.key %></code>
+          <code style="color: var(--color-text-muted);"><%= ev.value %></code>
+        </div>
+      <% end %>
+    </div>
+  </section>
+  <% end %>
+
+  <% if @blueprint.services.any? %>
+  <section>
+    <h3>Services</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
+      <% @blueprint.services.each do |svc| %>
+        <span class="badge <%= svc.enabled? ? 'badge-public' : 'badge-private' %>">
+          <%= svc.name %> &mdash; <%= svc.enabled? ? "enabled" : "disabled" %>
+        </span>
+      <% end %>
+    </div>
+  </section>
+  <% end %>
+
+  <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+    <h3>Download</h3>
+    <div style="display: flex; gap: 12px; margin-top: 12px;">
+      <%= link_to "Shell Script", api_v1_blueprint_download_script_path(@blueprint), class: "btn btn-outline" %>
+      <%= link_to "YAML", api_v1_blueprint_download_yaml_path(@blueprint), class: "btn btn-outline" %>
+    </div>
+  </section>
+</div>

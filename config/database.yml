@@ -1,0 +1,42 @@
+# PostgreSQL configuration for Blueprint
+#
+# Setup:
+#   1. Ensure PostgreSQL is running
+#   2. Create a role: createuser -s blueprint
+#   3. Or set DATABASE_URL env var
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("BLUEPRINT_DB_HOST") { "localhost" } %>
+  port: <%= ENV.fetch("BLUEPRINT_DB_PORT") { 5432 } %>
+  username: <%= ENV.fetch("BLUEPRINT_DB_USER") { "blueprint" } %>
+  password: <%= ENV.fetch("BLUEPRINT_DB_PASSWORD") { "" } %>
+
+development:
+  <<: *default
+  database: blueprint_development
+
+test:
+  <<: *default
+  database: blueprint_test
+
+production:
+  primary: &primary_production
+    <<: *default
+    database: blueprint_production
+    username: <%= ENV.fetch("BLUEPRINT_DB_USER") { "blueprint" } %>
+    password: <%= ENV["BLUEPRINT_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_production
+    database: blueprint_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: blueprint_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: blueprint_production_cable
+    migrations_paths: db/cable_migrate
