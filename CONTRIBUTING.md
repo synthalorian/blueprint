@@ -6,7 +6,7 @@ First off, thank you for considering contributing to Blueprint. It's people like
 
 ### Reporting Bugs
 
-Open a [GitHub Issue](https://github.com/synthclaw/blueprint/issues/new) with:
+Open a [GitHub Issue](https://github.com/synthshark/blueprint/issues/new) with:
 
 - Clear title and description
 - Steps to reproduce
@@ -30,7 +30,7 @@ Open a GitHub Issue with the `enhancement` label. Describe the use case and why 
 ### Development Setup
 
 ```bash
-git clone https://github.com/synthclaw/blueprint.git
+git clone https://github.com/synthshark/blueprint.git
 cd blueprint
 bundle install
 bin/rails db:create db:migrate db:seed

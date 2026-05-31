@@ -152,7 +152,7 @@ services:
 ### Installation
 
 ```bash
-git clone https://github.com/synthclaw/blueprint.git
+git clone https://github.com/synthshark/blueprint.git
 cd blueprint
 bundle install
 bin/rails db:create db:migrate db:seed
@@ -352,4 +352,4 @@ Apache License 2.0 — see [LICENSE](LICENSE).
 
 ---
 
-Built with ♥ by [synthclaw](https://github.com/synthclaw) — *write the future in the present while preserving the past*
+Built with ♥ by synth https://github.com/synthalorian— *write the future in the present while preserving the past*
