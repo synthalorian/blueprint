@@ -61,3 +61,9 @@ Thumbs.db
 db/cache_schema.rb
 db/queue_schema.rb
 db/cable_schema.rb
+
+# AI session artifacts
+.sandbox-home/
+.claw/
+.omo/
+.clawd-todos.json
