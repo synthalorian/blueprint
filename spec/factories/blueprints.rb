@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :blueprint do
-    name { "Test Blueprint" }
+    sequence(:name) { |n| "Test Blueprint #{n}" }
     description { "A blueprint for testing" }
     yaml_content do
       <<~YAML
@@ -12,7 +12,7 @@ FactoryBot.define do
         services: []
       YAML
     end
-    slug { "test-blueprint" }
+    sequence(:slug) { |n| "test-blueprint-#{n}" }
     public { true }
     user
 

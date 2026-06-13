@@ -65,7 +65,7 @@ arch_bp.packages.create!(name: "mise", category: "aur")
 arch_bp.dotfiles.create!(
   name: "Hyprland Config",
   content: "monitor=,preferred,auto,1\n$terminal = kitty\n$menu = fuzzel\n",
-  target_path: "~/.config/hypr/hyprland.conf"
+  target_path: "/home/synth/.config/hypr/hyprland.conf"
 )
 
 { "EDITOR" => "nvim", "BROWSER" => "firefox", "TERMINAL" => "kitty" }.each do |k, v|
@@ -113,7 +113,7 @@ end
 mac_bp.dotfiles.create!(
   name: "Neovim Config",
   content: "vim.opt.number = true\nvim.opt.relativenumber = true\n",
-  target_path: "~/.config/nvim/init.lua"
+  target_path: "/home/alice/.config/nvim/init.lua"
 )
 
 mac_bp.environment_variables.create!(key: "EDITOR", value: "nvim")

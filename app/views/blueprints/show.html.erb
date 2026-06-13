@@ -83,8 +83,8 @@
   <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border);">
     <h3>Download</h3>
     <div style="display: flex; gap: 12px; margin-top: 12px;">
-      <%= link_to "Shell Script", api_v1_blueprint_download_script_path(@blueprint), class: "btn btn-outline" %>
-      <%= link_to "YAML", api_v1_blueprint_download_yaml_path(@blueprint), class: "btn btn-outline" %>
+      <%= link_to "Shell Script", download_script_api_v1_blueprint_path(@blueprint), class: "btn btn-outline" %>
+      <%= link_to "YAML", download_yaml_api_v1_blueprint_path(@blueprint), class: "btn btn-outline" %>
     </div>
   </section>
 </div>

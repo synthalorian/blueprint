@@ -5,7 +5,7 @@ ruby ">= 3.2"
 gem "rails", "~> 8.1.3"
 gem "propshaft"
 gem "pg", "~> 1.1"
-gem "puma", ">= 5.0"
+gem "puma", ">= 8.0.2"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
@@ -23,7 +23,7 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 # Authentication
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 # Slugs
 gem "friendly_id", "~> 5.5"
@@ -42,7 +42,6 @@ group :development, :test do
   gem "rspec-rails", "~> 7.0"
   gem "factory_bot_rails", "~> 6.4"
   gem "shoulda-matchers", "~> 6.0"
-  gem "annotate", "~> 3.2"
 end
 
 group :development do

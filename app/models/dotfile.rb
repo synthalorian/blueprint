@@ -3,5 +3,5 @@ class Dotfile < ApplicationRecord
 
   validates :name, presence: true
   validates :content, presence: true
-  validates :target_path, presence: true, format: { with: /\A\//, message: "must be an absolute path" }
+  validates :target_path, presence: true, format: { with: /\A\/.*\z/, message: "must be an absolute path" }
 end
