@@ -23,7 +23,7 @@ Every time you set up a new machine, you rebuild from scratch. Install packages.
 Blueprint makes this declarative:
 
 1. **Define** — Write a YAML manifest declaring your packages, dotfiles, env vars, and services
-2. **Share** — Every blueprint gets a unique URL (`blueprint.dev/@synthalorian 🎹🤺/arch-hyprland`)
+2. **Share** — Every blueprint gets a unique URL (`blueprint.dev/@synth/arch-hyprland`)
 3. **Bootstrap** — Use the CLI to pull down a blueprint and set up a new machine in minutes
 
 Think "dotfiles as a service" with a web interface and an API for automation.
@@ -216,13 +216,13 @@ curl -X POST https://blueprint.dev/api/v1/blueprints \
 gem install blueprint-cli
 
 # Apply a blueprint to the current machine
-blueprint apply @synthalorian 🎹🤺/arch-hyprland
+blueprint apply @synth/arch-hyprland
 
 # Export as a shell script
-blueprint export @synthalorian 🎹🤺/arch-hyprland --format shell > setup.sh
+blueprint export @synth/arch-hyprland --format shell > setup.sh
 
 # Download the raw YAML
-blueprint download @synthalorian 🎹🤺/arch-hyprland > my-blueprint.yml
+blueprint download @synth/arch-hyprland > my-blueprint.yml
 
 # Create a blueprint from your current machine
 blueprint init
@@ -352,7 +352,7 @@ Apache License 2.0 — see [LICENSE](LICENSE).
 
 ---
 
-Built with ♥ by synthalorian 🎹🤺 https://github.com/synthalorian— *write the future in the present while preserving the past*
+Built with ♥ by synth https://github.com/synthalorian— *write the future in the present while preserving the past*
 
 ---
 
