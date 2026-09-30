@@ -152,7 +152,7 @@ services:
 ### Installation
 
 ```bash
-git clone https://github.com/synthshark/blueprint.git
+git clone https://github.com/synthalorian/blueprint.git
 cd blueprint
 bundle install
 bin/rails db:create db:migrate db:seed

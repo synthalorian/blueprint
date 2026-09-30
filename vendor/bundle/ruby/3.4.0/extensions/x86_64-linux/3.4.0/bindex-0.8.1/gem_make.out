@@ -1,0 +1,18 @@
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-52hhr sitelibdir\=./.gem.20260910-481942-52hhr clean
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-52hhr sitelibdir\=./.gem.20260910-481942-52hhr
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-52hhr sitelibdir\=./.gem.20260910-481942-52hhr install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20260910-481942-52hhr/skiptrace/internal
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-52hhr sitelibdir\=./.gem.20260910-481942-52hhr clean

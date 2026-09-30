@@ -1,0 +1,19 @@
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-9cvtp6 sitelibdir\=./.gem.20260910-481942-9cvtp6 clean
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-9cvtp6 sitelibdir\=./.gem.20260910-481942-9cvtp6
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-9cvtp6 sitelibdir\=./.gem.20260910-481942-9cvtp6 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20260910-481942-9cvtp6/debug
+
+current directory: /home/synth/Projects/backburner/blueprint/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260910-481942-9cvtp6 sitelibdir\=./.gem.20260910-481942-9cvtp6 clean
