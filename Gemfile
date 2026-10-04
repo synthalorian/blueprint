@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby ">= 3.2"
 
-gem "rails", "~> 8.1.3"
+gem "rails", "~> 8.1.4"
 gem "propshaft"
 gem "pg", "~> 1.1"
 gem "puma", ">= 8.0.2"
