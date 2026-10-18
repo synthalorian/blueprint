@@ -1,5 +1,10 @@
 ![blueprint](.github/preview.png)
 
+<p align="center">
+  <img src=".github/assets/synthalorian-idle-128.gif" width="128" height="128" alt="The synthalorian: a pixel-art figure in a black helmet with a pink T-visor, idling">
+</p>
+<p align="center"><em>Your dev environment as one YAML manifest. Define it once, rebuild it anywhere.</em></p>
+
 ```
  ____  _     _   _ _   _ __  __ ____  __  __ ___ _  _
 |  _ \| |   | | | | \ | |  \/  / ___||  \/  |_ _| \ | |
@@ -363,3 +368,11 @@ Built with ♥ by synth https://github.com/synthalorian— *write the future in 
 If this project saved you time, solved a problem, or just made your day a little more neon, you can fuel the next one:
 
 [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/synthalorian)
+
+---
+
+<p align="center">
+  <img src=".github/assets/synthalorian-idle-128.gif" width="32" height="32" alt="The synthalorian sprite"><br>
+  <sub>Built by <a href="https://github.com/synthalorian">the synthalorian</a></sub>
+  <br><sub>AI-assisted art: the banner image at the top of this README was made with AI image tools. The synthalorian sprite is code-drawn pixel art.</sub>
+</p>
