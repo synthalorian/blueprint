@@ -4,7 +4,7 @@ ruby ">= 3.2"
 
 gem "rails", "~> 8.1.3"
 gem "propshaft"
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.7"
 gem "puma", ">= 8.0.2"
 gem "importmap-rails"
 gem "turbo-rails"
