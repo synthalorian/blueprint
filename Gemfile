@@ -29,7 +29,7 @@ gem "devise", "~> 5.0"
 gem "friendly_id", "~> 5.5"
 
 # Pagination
-gem "kaminari", "~> 1.2"
+gem "kaminari", "~> 1.3"
 
 # YAML parsing / validation
 gem "safe_yaml", "~> 1.0"
